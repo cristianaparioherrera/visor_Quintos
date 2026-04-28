@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Visor hiperespectral de vegetación - Quintos de Mora</title>
+
+  <!-- Calcite Design System -->
+  <script
+    type="module"
+    src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js">
+  </script>
+
+  <!-- ArcGIS Maps SDK for JavaScript -->
+  <script src="https://js.arcgis.com/4.34/"></script>
+
+  <!-- ArcGIS Map Components -->
+  <script
+    type="module"
+    src="https://js.arcgis.com/4.34/map-components/">
+  </script>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="style.css?v=4" />
+
+  <!-- Código principal -->
+  <script type="module" src="main.js?v=5" defer></script>
+</head>
+
+<body class="calcite-mode-dark">
+
+  <calcite-shell>
+
+    <!-- CABECERA SUPERIOR -->
+    <calcite-navigation slot="header">
+
+      <calcite-navigation-logo
+        slot="logo"
+        heading="Visor hiperespectral de vegetación"
+        description="Quintos de Mora · Consulta espacial de índices espectrales por planta, sensor y diseño experimental">
+      </calcite-navigation-logo>
+
+      <div slot="user" class="user-info">
+        <p><strong>Trabajo Fin de Grado</strong></p>
+        <p>Cristian Aparicio Herrera · UPM</p>
+      </div>
+
+    </calcite-navigation>
+
+    <!-- MAPA PRINCIPAL -->
+    <calcite-panel>
+
+      <arcgis-map
+        id="mapaTFG"
+        basemap="dark-gray"
+        center="-4.1084,39.4410"
+        zoom="16">
+
+        <!-- WIDGETS DEL MAPA -->
+        <arcgis-legend
+          slot="top-right"
+          legend-style="classic">
+        </arcgis-legend>
+
+        <arcgis-scale-bar
+          slot="bottom-right"
+          bar-style="line"
+          unit="metric">
+        </arcgis-scale-bar>
+
+        <arcgis-basemap-toggle
+          slot="top-left"
+          next-basemap="satellite"
+          show-title>
+        </arcgis-basemap-toggle>
+
+        <!-- PANEL FLOTANTE DE CONTROL -->
+        <calcite-panel
+          class="floating-ui floating-ui--layers"
+          slot="bottom-left"
+          heading="Control del visor">
+
+          <!-- BOTONES DE MODO -->
+          <div class="button-group">
+
+            <calcite-button
+              id="btnEspecies"
+              width="full"
+              appearance="solid"
+              scale="s">
+              Especies
+            </calcite-button>
+
+            <calcite-button
+              id="btnIndices"
+              width="full"
+              appearance="outline"
+              scale="s">
+              Índices
+            </calcite-button>
+
+            <calcite-button
+              id="btnExperimental"
+              width="full"
+              appearance="outline"
+              scale="s">
+              Diseño experimental
+            </calcite-button>
+
+          </div>
+
+          <!-- BLOQUE DE ÍNDICES -->
+          <div class="control-block">
+
+            <calcite-label>
+              Índice espectral
+              <calcite-select id="selectIndice" scale="s">
+                <calcite-option value="NDVI" selected>NDVI</calcite-option>
+                <calcite-option value="PRI">PRI</calcite-option>
+                <calcite-option value="SR">SR</calcite-option>
+                <calcite-option value="SIPI">SIPI</calcite-option>
+                <calcite-option value="SRPI">SRPI</calcite-option>
+                <calcite-option value="NDPI">NDPI</calcite-option>
+                <calcite-option value="WI">WI</calcite-option>
+              </calcite-select>
+            </calcite-label>
+
+            <calcite-label>
+              Sensor
+              <calcite-select id="selectSensor" scale="s">
+                <calcite-option value="DRON" selected>
+                  Dron hiperespectral
+                </calcite-option>
+                <calcite-option value="RAD">
+                  Espectroradiómetro
+                </calcite-option>
+              </calcite-select>
+            </calcite-label>
+
+          </div>
+
+          <!-- LISTA DE CAPAS -->
+          <arcgis-layer-list>
+          </arcgis-layer-list>
+
+        </calcite-panel>
+
+      </arcgis-map>
+
+    </calcite-panel>
+
+  </calcite-shell>
+
+</body>
+
+</html>
