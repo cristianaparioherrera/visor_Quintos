@@ -23,7 +23,7 @@
   </script>
 
   <!-- Estilos propios -->
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=6" />
 
   <!-- Código principal -->
   <script type="module" src="main.js?v=5" defer></script>
@@ -36,12 +36,22 @@
     <!-- CABECERA SUPERIOR -->
     <calcite-navigation slot="header">
 
+      <!-- BLOQUE IZQUIERDO: TÍTULO DEL VISOR -->
       <calcite-navigation-logo
         slot="logo"
         heading="Visor hiperespectral de vegetación"
         description="Quintos de Mora · Consulta espacial de índices espectrales por planta, sensor y diseño experimental">
       </calcite-navigation-logo>
 
+      <!-- BLOQUE CENTRAL: LOGO INSTITUCIONAL -->
+      <div slot="content-center" class="nav-center-logo">
+        <img
+          src="img/cabecera_montesymedionatural.png.png"
+          alt="Universidad Politécnica de Madrid"
+          class="header-logo">
+      </div>
+
+      <!-- BLOQUE DERECHO: AUTORÍA -->
       <div slot="user" class="user-info">
         <p><strong>Trabajo Fin de Grado</strong></p>
         <p>Cristian Aparicio Herrera · UPM</p>

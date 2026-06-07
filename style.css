@@ -1,7 +1,7 @@
-/* =========================================================
+/* 
    VISOR TFG - QUINTOS DE MORA
    Estilos generales
-   ========================================================= */
+    */
 
 html,
 body {
@@ -24,9 +24,9 @@ arcgis-map {
   display: block;
 }
 
-/* =========================================================
+/* 
    CABECERA SUPERIOR
-   ========================================================= */
+    */
 
 calcite-navigation {
   --calcite-color-foreground-1: #1f1f1f;
@@ -58,9 +58,9 @@ calcite-navigation {
   color: var(--calcite-color-text-2);
 }
 
-/* =========================================================
+/* 
    PANEL FLOTANTE DE CONTROL
-   ========================================================= */
+    */
 
 .floating-ui {
   width: 360px;
@@ -76,9 +76,9 @@ calcite-navigation {
   --calcite-panel-background-color: rgba(32, 32, 32, 0.96);
 }
 
-/* =========================================================
+/* 
    BOTONES DE MODO
-   ========================================================= */
+   */
 
 .button-group {
   display: grid;
@@ -92,9 +92,9 @@ calcite-navigation {
   width: 100%;
 }
 
-/* =========================================================
+/* 
    BLOQUE DE CONTROLES DE ÍNDICES
-   ========================================================= */
+   */
 
 .control-block {
   padding: 12px;
@@ -108,9 +108,9 @@ calcite-navigation {
   font-weight: 600;
 }
 
-/* =========================================================
+/*
    WIDGETS DE ARCGIS
-   ========================================================= */
+  */
 
 arcgis-legend {
   max-width: 310px;
@@ -130,9 +130,9 @@ arcgis-scale-bar {
   margin: 12px;
 }
 
-/* =========================================================
+/* 
    POPUPS GENERALES
-   ========================================================= */
+    */
 
 .esri-popup__main-container {
   width: 390px !important;
@@ -161,9 +161,9 @@ arcgis-scale-bar {
   padding-inline: 4px;
 }
 
-/* =========================================================
+/* 
    POPUPS PERSONALIZADOS DEL VISOR
-   ========================================================= */
+    */
 
 .popup-card {
   width: 100%;
@@ -249,9 +249,9 @@ arcgis-scale-bar {
   font-variant-numeric: tabular-nums;
 }
 
-/* =========================================================
+/* 
    AJUSTES VISUALES DE MAPA
-   ========================================================= */
+   */
 
 .esri-legend {
   border-radius: 8px;
@@ -265,9 +265,9 @@ arcgis-scale-bar {
   font-size: 10px;
 }
 
-/* =========================================================
+/* 
    RESPONSIVE
-   ========================================================= */
+  */
 
 @media (max-width: 900px) {
   .floating-ui {
@@ -307,5 +307,32 @@ arcgis-scale-bar {
 
   .popup-table-info td:last-child {
     width: 58%;
+  }
+}
+
+/* 
+   LOGO CENTRAL DE LA CABECERA
+    */
+
+.nav-center-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 260px;
+  pointer-events: none;
+}
+
+.header-logo {
+  height: 42px;
+  max-width: 360px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* En pantallas pequeñas ocultamos el logo para no romper la cabecera */
+@media (max-width: 900px) {
+  .nav-center-logo {
+    display: none;
   }
 }
