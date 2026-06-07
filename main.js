@@ -387,7 +387,7 @@ function crearTablaIndices(attributes) {
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
 
-  ["Índice", "Dron", "Espectroradiómetro"].forEach((texto, index) => {
+  ["Índice", "Dron", "Radiómetro"].forEach((texto, index) => {
     const th = document.createElement("th");
     th.textContent = texto;
     aplicarEstilos(th, {
