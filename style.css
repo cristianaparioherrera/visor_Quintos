@@ -1,7 +1,7 @@
 /* 
    VISOR TFG - QUINTOS DE MORA
    Estilos generales
-    */
+*/
 
 html,
 body {
@@ -26,7 +26,7 @@ arcgis-map {
 
 /* 
    CABECERA SUPERIOR
-    */
+*/
 
 calcite-navigation {
   --calcite-color-foreground-1: #1f1f1f;
@@ -59,8 +59,28 @@ calcite-navigation {
 }
 
 /* 
+   LOGO CENTRAL DE LA CABECERA
+*/
+
+.nav-center-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-width: 260px;
+  pointer-events: none;
+}
+
+.header-logo {
+  height: 42px;
+  max-width: 360px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+/* 
    PANEL FLOTANTE DE CONTROL
-    */
+*/
 
 .floating-ui {
   width: 360px;
@@ -78,7 +98,7 @@ calcite-navigation {
 
 /* 
    BOTONES DE MODO
-   */
+*/
 
 .button-group {
   display: grid;
@@ -94,7 +114,7 @@ calcite-navigation {
 
 /* 
    BLOQUE DE CONTROLES DE ÍNDICES
-   */
+*/
 
 .control-block {
   padding: 12px;
@@ -110,7 +130,7 @@ calcite-navigation {
 
 /*
    WIDGETS DE ARCGIS
-  */
+*/
 
 arcgis-legend {
   max-width: 310px;
@@ -132,7 +152,7 @@ arcgis-scale-bar {
 
 /* 
    POPUPS GENERALES
-    */
+*/
 
 .esri-popup__main-container {
   width: 390px !important;
@@ -152,7 +172,6 @@ arcgis-scale-bar {
   padding: 10px 12px 12px 12px;
 }
 
-/* Quita algo de ruido visual del popup */
 .esri-popup__footer {
   min-height: 30px;
 }
@@ -163,7 +182,7 @@ arcgis-scale-bar {
 
 /* 
    POPUPS PERSONALIZADOS DEL VISOR
-    */
+*/
 
 .popup-card {
   width: 100%;
@@ -251,7 +270,7 @@ arcgis-scale-bar {
 
 /* 
    AJUSTES VISUALES DE MAPA
-   */
+*/
 
 .esri-legend {
   border-radius: 8px;
@@ -266,93 +285,21 @@ arcgis-scale-bar {
 }
 
 /* 
-   RESPONSIVE
-  */
+   RESPONSIVE - TABLET
+*/
 
 @media (max-width: 900px) {
-  .floating-ui {
-    width: 320px;
-    max-height: 70vh;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .esri-popup__main-container {
-    width: 360px !important;
-    max-width: 360px !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .floating-ui {
-    width: calc(100vw - 32px);
-    max-height: 65vh;
-    margin: 12px;
-  }
-
-  arcgis-legend {
-    max-width: 260px;
-  }
-
-  .esri-popup__main-container {
-    width: 320px !important;
-    max-width: 320px !important;
-  }
-
-  .popup-table-info td:first-child {
-    width: 42%;
-  }
-
-  .popup-table-info td:last-child {
-    width: 58%;
-  }
-}
-
-/* 
-   LOGO CENTRAL DE LA CABECERA
-  */
-
-.nav-center-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  min-width: 260px;
-  pointer-events: none;
-}
-
-.header-logo {
-  height: 42px;
-  max-width: 360px;
-  object-fit: contain;
-  opacity: 0.95;
-}
-
-/* En pantallas pequeñas ocultamos el logo para no romper la cabecera */
-@media (max-width: 900px) {
-  .nav-center-logo {
-    display: none;
-  }
-}
-
-/*
-   RESPONSIVE - TABLET Y MÓVIL
-    */
-
-@media (max-width: 900px) {
-  .floating-ui {
-    width: 320px;
-    max-height: 70vh;
-  }
-
   .user-info {
     display: none;
   }
 
   .nav-center-logo {
     display: none;
+  }
+
+  .floating-ui {
+    width: 320px;
+    max-height: 60vh;
   }
 
   .esri-popup__main-container {
@@ -363,11 +310,14 @@ arcgis-scale-bar {
 
 /* 
    RESPONSIVE - MÓVIL
-   */
+*/
 
 @media (max-width: 600px) {
+  /* Cabecera superior más compacta */
+  calcite-navigation {
+    min-height: 58px;
+  }
 
-  /* Cabecera más compacta */
   calcite-navigation-logo {
     max-width: calc(100vw - 24px);
   }
@@ -386,158 +336,62 @@ arcgis-scale-bar {
     text-overflow: ellipsis;
   }
 
-  /* Ocultamos la leyenda grande en móvil */
-  arcgis-legend {
-    display: none;
+  /* En móvil ocultamos la leyenda grande */
+  arcgis-legend,
+  .esri-legend,
+  .esri-component.esri-legend {
+    display: none !important;
   }
 
   /* Panel de control adaptado a móvil */
   .floating-ui {
-    width: calc(100vw - 32px);
-    max-height: 38vh;
-    margin: 10px;
+    width: calc(100vw - 28px);
+    max-height: 34vh;
+    margin: 8px;
     border-radius: 10px;
   }
 
   .button-group {
-    padding: 10px;
+    padding: 9px;
     gap: 6px;
   }
 
+  .button-group calcite-button {
+    min-height: 28px;
+  }
+
   .control-block {
-    padding: 10px;
+    padding: 9px;
     gap: 8px;
   }
 
   arcgis-layer-list {
-    max-height: 150px;
+    max-height: 120px;
     overflow-y: auto;
   }
 
-  /* Basemap toggle más pequeño */
+  /* Imagen de cambio de mapa base más pequeña */
   arcgis-basemap-toggle {
-    transform: scale(0.75);
+    transform: scale(0.7);
     transform-origin: top left;
+    margin: 5px;
+  }
+
+  /* Barra de escala más discreta */
+  arcgis-scale-bar {
+    transform: scale(0.72);
+    transform-origin: bottom right;
     margin: 6px;
   }
 
-  /* Escala más discreta */
-  arcgis-scale-bar {
-    transform: scale(0.75);
-    transform-origin: bottom right;
-    margin: 8px;
-  }
-
-  /* Popup adaptado */
+  /* Popup adaptado al móvil */
   .esri-popup__main-container {
     width: calc(100vw - 36px) !important;
     max-width: calc(100vw - 36px) !important;
   }
 
-  .popup-table-info td:first-child {
-    width: 42%;
-  }
-
-  .popup-table-info td:last-child {
-    width: 58%;
-  }
-}
-
-/* 
-   RESPONSIVE - TABLET Y MÓVIL
-   */
-
-@media (max-width: 900px) {
-  .floating-ui {
-    width: 320px;
-    max-height: 70vh;
-  }
-
-  .user-info {
-    display: none;
-  }
-
-  .nav-center-logo {
-    display: none;
-  }
-
-  .esri-popup__main-container {
-    width: 360px !important;
-    max-width: 360px !important;
-  }
-}
-
-/* 
-   RESPONSIVE - MÓVIL
-   */
-
-@media (max-width: 600px) {
-
-  /* Cabecera más compacta */
-  calcite-navigation-logo {
-    max-width: calc(100vw - 24px);
-  }
-
-  calcite-navigation-logo::part(heading) {
-    font-size: 15px;
-    line-height: 1.1;
-  }
-
-  calcite-navigation-logo::part(description) {
+  .esri-popup__content {
     font-size: 11px;
-    line-height: 1.1;
-    max-width: 95vw;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-
-  /* Ocultamos la leyenda grande en móvil */
-  arcgis-legend {
-    display: none;
-  }
-
-  /* Panel de control adaptado a móvil */
-  .floating-ui {
-    width: calc(100vw - 32px);
-    max-height: 38vh;
-    margin: 10px;
-    border-radius: 10px;
-  }
-
-  .button-group {
-    padding: 10px;
-    gap: 6px;
-  }
-
-  .control-block {
-    padding: 10px;
-    gap: 8px;
-  }
-
-  arcgis-layer-list {
-    max-height: 150px;
-    overflow-y: auto;
-  }
-
-  /* Basemap toggle más pequeño */
-  arcgis-basemap-toggle {
-    transform: scale(0.75);
-    transform-origin: top left;
-    margin: 6px;
-  }
-
-  /* Escala más discreta */
-  arcgis-scale-bar {
-    transform: scale(0.75);
-    transform-origin: bottom right;
-    margin: 8px;
-  }
-
-  /* Popup adaptado */
-  .esri-popup__main-container {
-    width: calc(100vw - 36px) !important;
-    max-width: calc(100vw - 36px) !important;
   }
 
   .popup-table-info td:first-child {
@@ -546,5 +400,10 @@ arcgis-scale-bar {
 
   .popup-table-info td:last-child {
     width: 58%;
+  }
+
+  .popup-table td,
+  .popup-table th {
+    padding: 4px 5px;
   }
 }
