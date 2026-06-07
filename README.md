@@ -1,6 +1,6 @@
 # Visor Quintos de Mora
 
-![Cabecera Montes y Medio Natural](img/cabecera_montesymedionatural.png)
+![Cabecera Montes y Medio Natural](img/cabecera_montesymedionatural.png.png)
 
 ## Visor estático de Quintos de Mora
 
